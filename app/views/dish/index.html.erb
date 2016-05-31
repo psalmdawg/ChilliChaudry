@@ -1,0 +1,171 @@
+<h1>Our Menu</h1>
+<div class="menu-container">
+ <% @dishes.each do |dish| %>
+   <div class="menu-item">
+     <div class="menu-item-name">
+        <%=dish.name%>
+     </div>
+     <div class="menu-item-description">
+        <%=dish.description%>
+     </div>
+     <div class="menu-item-price">
+        <span class="menu-item-price-span">Price </span><%=dish.price%>
+        <span id="KSH"> Ksh</span> <div id="underliner"></div>
+     </div>
+      <div class="add-to-button">
+        <input type="hidden" class="form-dish-name" value="<%= dish.name%>">
+        <input type="hidden" class="form-dish-id" value="<%= dish.id%>">
+        <input type="hidden" class="form-dish-price" value="<%= dish.price%>">
+        <button class='add-to-order-btn'>ADD TO ORDER</button>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+
+<div id="order-list-container">
+  <div id="order-list-title">Your Order:</div>
+    <div id="order-list">
+      <ul id="order">
+      </ul>
+    </div>
+    <div class="order-total"></div>
+    <div class="purchase-button">
+
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn">Confirm Order</button>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">CLOSE</span>
+            <!-- HOW TO MAKE THIS POST WORK... WHY SHOULD IT BE POST AND NOT GET -->
+            <form class="confirmation" action="/confirmation" method="get">
+              <input type="hidden" name="name" value=orderIdArray>
+              <div id="modal-order">
+
+              </div>
+              <div id="modal-order-total">
+
+              </div>
+              <button>Proceed to Payment</button>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- <div id="demo">
+<ul class="food">
+</ul>
+</div> -->
+
+<!-- <div class="list">
+</div>
+
+
+<!-- <script id="item-template" type="text/x-handlebars-template"></script> -->
+    <script id="dish-details-template" type="text/x-handlbars-template">
+      <div class="entry">
+      <h2>{{ name }}</h2>
+      <p>{{ description }}</p>
+      </div>
+    </script>
+
+
+
+
+<script>
+
+
+//https://www.smashingmagazine.com/2014/02/create-client-side-shopping-cart/
+
+
+
+
+  // var array =['fish', 'fish', 'fish', 'dog', 'smelly dog'];
+  //
+  // function paulio(){
+  //   var newArray = [];
+  //
+  //   for(i=0;i<array.length;i++){
+  //   	var word = array[i];
+  //   	if($.inArray(word, newArray) !=false){
+  //   		newArray.push(word)
+  //   	};
+  //   }
+  //   return newArray;
+  // }
+
+
+  //
+  // 	for(x=0;x<newArray.length;x++){
+  // 	    for (var i = 0; i < array.length; i++) {
+  // 	        if (array[i] === newArray[x]) {
+  //
+  // 	        }
+  // 	    }
+  // 		return false;
+  // 	}
+  // }
+
+
+
+
+  // contains()
+
+
+
+
+
+// var cart = [{
+// 	item_id: "Product 1",
+// 	price: 650,
+// 	qty: 2
+// },
+// {
+//
+// }
+// ];
+
+// var jsonStr = JSON.stringify( cart );
+// sessionStorage.setItem( "cart", jsonStr );
+// // now the cart is {"item":"Product 1","price":35.50,"qty":2}
+// var cartValue = sessionStorage.getItem( "cart" );
+// var cartObj = JSON.parse( cartValue );
+// // original object
+
+//
+// $.ajax({
+//     type: "get",
+//     url: 'http://localhost:3000/api/dish',
+//     mydata: points,
+//     success: function(response) {
+//     //do something with the response here
+//     }
+// });
+
+// var Handlebars.registerHelper('toJSON', function(object){
+// 	return new Handlebars.SafeString(JSON.stringify(object));
+// });
+
+// $.getJSON('http://localhost:3000/api/dish').done(function(data) {  //what is difference between .getJson and .ajax?
+//  console.log(data[4].name)
+//
+//     data.forEach(function(dish){
+//
+//       var templateString = $('#dish-details-template').html();
+//       var template = Handlebars.compile(templateString);
+//       var html = template({
+//             name: dish.name,
+//             description: dish.description,
+//             price: dish.price
+//           });
+//       var $newElem = $('div').html(html);
+//
+//       $('.list').append( $newElem );
+//     });
+// });
+//
+</script>

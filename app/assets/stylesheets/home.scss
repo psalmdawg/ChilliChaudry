@@ -1,0 +1,53 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// body {
+//   margin: auto;
+//   border: 1px black solid;
+//   width:960px;
+//   background-color: #eeedec;
+// }
+
+body {
+  margin: auto;
+  border: 1px black solid;
+  width:960px;
+  background-color: #eeedec;
+  margin-top: 300px;
+}
+
+nav li:hover {
+  color: black;
+  //   -webkit-box-shadow: 0 8px 7px #777;
+  // -moz-box-shadow: 0 8px 7px #777;
+  // box-shadow: 0 8px 7px #777;
+  -webkit-box-shadow:-1px -1px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow:-1px -1px rgba(0, 0, 0, 0.6);
+  box-shadow: -1px -1px rgba(0, 0, 0, 0.6);
+
+}
+
+nav li{
+  color:#771100;
+  display:inline-block;
+  border: solid white 1px;
+  padding:5px;
+  text-align: center;
+  margin-top:20px;
+  margin-left: 10px;
+  width: 100px;
+  background-color: white;
+  border-radius: 2px;
+}
+nav ul{
+
+}
+
+nav{
+  height:4em;
+  background:#ded29e;
+  position:fixed;
+  width: 100%;
+  // padding-top: 30px;
+}
