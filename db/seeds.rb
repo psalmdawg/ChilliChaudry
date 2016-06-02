@@ -7,7 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
+admin = Admin.new
+admin.name = "Paul"
+admin.user_name = "chillies"
+admin.password = "chillies"
+admin.save
 
 dish = Dish.new
 dish.name = 'Chicken Tikka Kebab & Chips'

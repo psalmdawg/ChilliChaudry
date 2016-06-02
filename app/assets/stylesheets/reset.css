@@ -36,7 +36,7 @@ h4 {
 
 a,
 button {
-  color: inherit; /* dose not inherit be default */
+  /*color: inherit; /* dose not inherit be default */*/
   transition: .3s;
 }
 

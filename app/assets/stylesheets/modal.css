@@ -13,13 +13,30 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+#modal-right{
+  display:block;
+  text-align:center;
+}
+
+#modal-order-total {
+  margin: 10px;
+  color: dark-red;
+  font-weight: bold;
+}
+
+.modal-form-input{
+  height:20px;
+  font-size: 15px;
+  padding: 2px;
+}
+
 /* Modal Content */
 .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 75%;
 }
 
 /* The Close Button */

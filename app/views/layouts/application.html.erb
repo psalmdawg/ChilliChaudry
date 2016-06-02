@@ -10,20 +10,39 @@
   <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
 </head>
 
+
+
+
 <body>
+  <div class="navContainer">
+    <nav>
+      <ul id="main-nav-list">
+        <a href="/"><li>About Us</li></a>
+        <a href="/dish"><li>Order Food</li></a>
+        <% if session[:current_user_id] %>
+          <a href='/logout'><li>Log-Out</li></a>
+          <a href="/admin"><li>Orders</li></a>
+        <% else %>
+          <a href="/login"><li>Log-In</li></a>
+        <% end %>
+      </ul>
+      <% if session[:current_user_id] %>
+      <span id="logged-in-status">You Are logged in!</span>
+      <% end %>
+    </nav>
+  </div>
+
   <div id="mainContainer">
 
 
-  <nav>
-    <ul>
-      <li><a href="/">About Us</a></li>
-      <li><a href="/dish">Menu</a></li>
-    </ul>
-
-  </nav>
 
 
-<%= yield %>
+         <%= yield %>
+
+
+
+
+
   </div>
 </body>
 </html>

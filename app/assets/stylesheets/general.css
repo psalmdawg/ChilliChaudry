@@ -1,26 +1,9 @@
-html, body {
-    height: 100%;
-    overflow: hidden;
+
+body{
+  background-color:#eeedec;
+  /*width:960;
+  margin:auto;*/
 }
-
-#mainContainer {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-}
-
-/*body {
-  margin: auto;
-  border: 1px black solid;
-  width:960px;
-  background-color: #eeedec;
-  margin-top: 300px;
-}*/
-
-
 
 #show-the-order-array-id{
   margin-top:400px;

@@ -10,10 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require reset
+ *= require menu-page
+ *= require general
+ *= require modal
+ *= require home
  *= require_self
- *= require_menu-page
- *= require_reset
- *= require_general
- *= require_modal
  */

@@ -15,7 +15,6 @@
 //= require backbone
 //= require handlebars
 //= require jquery_ujs
-//= require turbolinks
 //= require menu
 //= require modal
 //= require_tree .

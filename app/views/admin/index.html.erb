@@ -1,0 +1,57 @@
+
+<h4>Unprocessed Orders<h4>
+  <br>
+  <br>
+  There are <%= @count %> unprocessed orders!
+<ul id="unprocessed-orders-list">
+  <br>
+  <br>
+  <% @unprocessed_orders.each do |order| %>
+  <li id="<%=order.id%>">ID:<%=order.id%> | Name: <%=order.customer_name%> | Contact: <%=order.phone%>
+    <form action="/orders/<%=order.id%>" method='post'>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="hidden" name="change_to_true" value="true">
+      <button>remove</button>
+    </form>
+    <form action="/orders/view" method='get'>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="hidden" name="id" value="<%=order.id%>">
+      <button>view order</button>
+    </form>
+  </li>
+  <% end %>
+
+</ul>
+<br>
+
+<br>
+processed orders... (below)
+<br>
+
+<br>
+  <ul>
+    <% @processed.each do |order| %>
+      <li>
+        ID:<%=order.id%> | Name: <%=order.customer_name%> | Contact: <%=order.phone%>
+        <form action="/orders/view" method='get'>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <input type="hidden" name="id" value="<%=order.id%>">
+          <button>view order</button>
+        </form>
+      </li>
+    <% end %>
+  </ul>
+
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+    $('#unprocessed-orders-list').on('click' , function() {
+
+      console.log( event.target.id )
+
+    })
+
+
+
+  });
+</script>

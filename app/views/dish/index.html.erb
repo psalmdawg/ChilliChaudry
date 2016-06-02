@@ -2,6 +2,7 @@
 <div class="menu-container">
  <% @dishes.each do |dish| %>
    <div class="menu-item">
+     
      <div class="menu-item-name">
         <%=dish.name%>
      </div>
@@ -22,7 +23,6 @@
   <% end %>
 </div>
 
-
 <div id="order-list-container">
   <div id="order-list-title">Your Order:</div>
     <div id="order-list">
@@ -34,24 +34,39 @@
 
       <!-- Trigger/Open The Modal -->
       <button id="myBtn">Confirm Order</button>
+
       <!-- The Modal -->
       <div id="myModal" class="modal">
+
         <!-- Modal content -->
         <div class="modal-content">
-          <span class="close">CLOSE</span>
-            <!-- HOW TO MAKE THIS POST WORK... WHY SHOULD IT BE POST AND NOT GET -->
-            <form class="confirmation" action="/confirmation" method="get">
-              <input type="hidden" name="name" value=orderIdArray>
-              <div id="modal-order">
+          <div id="modal-left">
 
-              </div>
-              <div id="modal-order-total">
+            <div id="modal-order-total"></div>
+            <div id="modal-order">
 
+            </div>
+            <div id="modal-order-total">
+
+            </div>
+          </div>
+          <div id="modal-right">
+            <!-- HOW TO MAKE THIS POST WORK... WHY SHOULD IT BE POST AND NOT GET??? -->
+            <form id="confirmation-form" action="/confirmation" method="post">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <input type="hidden" id="confirmation-buy" name="ordered_dishes" value="">
+                <input type="text"  class = "modal-form-input" name="customer_name" placeholder="Name">
+                <input type="text"  class = "modal-form-input" name="customer_phone" placeholder="Contact Number">
+                <input type="email" class = "modal-form-input" name="customer_email" placeholder="Your Email">
+                <input type="text"  class = "modal-form-input" name="delivery_address" placeholder="Delivery Address">
+                <input type="text"  class = "modal-form-input" name="special_instructions" placeholder="Please enter any special delivery/dietry requirements">
+                <div id="modal-payment-btn-ctnr">
+                <button>Proceed to Payment</button>
+                <span class="close">CANCEL</span>
               </div>
-              <button>Proceed to Payment</button>
             </form>
-        </div>
-      </div>
+          </div>
+        </div> <!--//end of modal -->
     </div>
 </div>
 
