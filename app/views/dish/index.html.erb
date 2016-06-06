@@ -2,7 +2,7 @@
 <div class="menu-container">
  <% @dishes.each do |dish| %>
    <div class="menu-item">
-     
+
      <div class="menu-item-name">
         <%=dish.name%>
      </div>
@@ -29,25 +29,21 @@
       <ul id="order">
       </ul>
     </div>
-    <div class="order-total"></div>
+    <div class="order-total"><span>KES </span></div>
     <div class="purchase-button">
 
       <!-- Trigger/Open The Modal -->
       <button id="myBtn">Confirm Order</button>
-
+        <button id="cancel-order">Clear Order</button>
       <!-- The Modal -->
       <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
           <div id="modal-left">
-
             <div id="modal-order-total"></div>
             <div id="modal-order">
-
             </div>
             <div id="modal-order-total">
-
             </div>
           </div>
           <div id="modal-right">
@@ -61,126 +57,12 @@
                 <input type="text"  class = "modal-form-input" name="delivery_address" placeholder="Delivery Address">
                 <input type="text"  class = "modal-form-input" name="special_instructions" placeholder="Please enter any special delivery/dietry requirements">
                 <div id="modal-payment-btn-ctnr">
-                <button>Proceed to Payment</button>
-                <span class="close">CANCEL</span>
-              </div>
+                  <button>Proceed to Payment</button>
+                  <span class="close">CANCEL</span>
+                </div>
             </form>
           </div>
-        </div> <!--//end of modal -->
+        </div>
+      </div><!--//end of modal -->
     </div>
 </div>
-
-
-<!-- <div id="demo">
-<ul class="food">
-</ul>
-</div> -->
-
-<!-- <div class="list">
-</div>
-
-
-<!-- <script id="item-template" type="text/x-handlebars-template"></script> -->
-    <script id="dish-details-template" type="text/x-handlbars-template">
-      <div class="entry">
-      <h2>{{ name }}</h2>
-      <p>{{ description }}</p>
-      </div>
-    </script>
-
-
-
-
-<script>
-
-
-//https://www.smashingmagazine.com/2014/02/create-client-side-shopping-cart/
-
-
-
-
-  // var array =['fish', 'fish', 'fish', 'dog', 'smelly dog'];
-  //
-  // function paulio(){
-  //   var newArray = [];
-  //
-  //   for(i=0;i<array.length;i++){
-  //   	var word = array[i];
-  //   	if($.inArray(word, newArray) !=false){
-  //   		newArray.push(word)
-  //   	};
-  //   }
-  //   return newArray;
-  // }
-
-
-  //
-  // 	for(x=0;x<newArray.length;x++){
-  // 	    for (var i = 0; i < array.length; i++) {
-  // 	        if (array[i] === newArray[x]) {
-  //
-  // 	        }
-  // 	    }
-  // 		return false;
-  // 	}
-  // }
-
-
-
-
-  // contains()
-
-
-
-
-
-// var cart = [{
-// 	item_id: "Product 1",
-// 	price: 650,
-// 	qty: 2
-// },
-// {
-//
-// }
-// ];
-
-// var jsonStr = JSON.stringify( cart );
-// sessionStorage.setItem( "cart", jsonStr );
-// // now the cart is {"item":"Product 1","price":35.50,"qty":2}
-// var cartValue = sessionStorage.getItem( "cart" );
-// var cartObj = JSON.parse( cartValue );
-// // original object
-
-//
-// $.ajax({
-//     type: "get",
-//     url: 'http://localhost:3000/api/dish',
-//     mydata: points,
-//     success: function(response) {
-//     //do something with the response here
-//     }
-// });
-
-// var Handlebars.registerHelper('toJSON', function(object){
-// 	return new Handlebars.SafeString(JSON.stringify(object));
-// });
-
-// $.getJSON('http://localhost:3000/api/dish').done(function(data) {  //what is difference between .getJson and .ajax?
-//  console.log(data[4].name)
-//
-//     data.forEach(function(dish){
-//
-//       var templateString = $('#dish-details-template').html();
-//       var template = Handlebars.compile(templateString);
-//       var html = template({
-//             name: dish.name,
-//             description: dish.description,
-//             price: dish.price
-//           });
-//       var $newElem = $('div').html(html);
-//
-//       $('.list').append( $newElem );
-//     });
-// });
-//
-</script>
