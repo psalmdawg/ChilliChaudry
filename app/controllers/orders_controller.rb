@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
   def create
+
     @ordered_dishes = params[:ordered_dishes]
     @customer_name  = params[:customer_name]
     @customer_phone = params[:customer_phone]
@@ -8,9 +9,11 @@ class OrdersController < ApplicationController
     @delivery_address = params[:delivery_address]
     @special_instructions = params[:special_instructions]
 
+    @dish = Dish.all
+
 
     order = Order.new
-    order.dishes =params[:ordered_dishes]
+    order.dishes = params[:ordered_dishes]
     order.customer_name = params[:customer_name]
     order.phone = params[:customer_phone]
     order.email = params[:customer_email]

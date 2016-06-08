@@ -10,21 +10,24 @@ $( document ).ready(function() {
       addItemToCart(name, price, dishId, 1)
       displayCart();
       saveCart();
+      // makeOrderArray()
       });
 
       $("#cancel-order").click(function(event){
-        console.log('cancelling')
+        // console.log('cancelling')
         clearCart();
         displayCart();
+        makeOrderArray()
       });
 
 
       $("#order").on("click", ".delete-item", function(event){
-       console.log('trying to remove one item');
-       console.log($(this).attr("name"))
+      //  console.log('trying to remove one item');
+      //  console.log($(this).attr("name"))
        var name = $(this).attr("name");
        removeItemFromCartAll(name);
        displayCart();
+      //  makeOrderArray()
      });
 
 
@@ -32,18 +35,26 @@ $( document ).ready(function() {
        var name = $(this).attr("name");
        removeItemFromCart(name);
        displayCart();
-       console.log(name)
+      //  makeOrderArray()
+      //  console.log(name)
      })
+
+
+     $("#myBtn").click(function(){
+       makeOrderArray()
+     });
+
 
 
      $("#order").on("click", ".plus-item", function(event){
        var name = $(this).attr("name");
        var dishId = $(this).closest('li').find(".hidden-dish-id").val();
-       console.log(name)
-       console.log($(this).closest('li').find(".hidden-dish-id").val())
+      //  console.log(name)
+      //  console.log($(this).closest('li').find(".hidden-dish-id").val())
 
        addItemToCart(name, dishId, 0, 1);
        displayCart();
+      //  makeOrderArray()
      })
 
       var cart = [];
@@ -63,11 +74,13 @@ $( document ).ready(function() {
       }
 
       function displayCart(){
+        // console.log(cart)
 
         var cartArray = listCart();
         var output = "";
         var modalOutput = "";
-        var modalIdArrayOutput = [];
+        // var modalHiddenData = JSON.stringify(cart)
+        // console.log('hide' + modalHiddenData)
 
         for(var i in cartArray) {
           output += '<li>'
@@ -93,8 +106,8 @@ $( document ).ready(function() {
           + cartArray[i].name
           + '</li>';
 
-          modalIdArrayOutput.push(cartArray[i].dishId);
-          console.log("id array" + modalIdArrayOutput)
+          // modalIdArrayOutput.push(cartArray[i].dishId);
+          // console.log("id array" + modalIdArrayOutput)
 
         }
 
@@ -102,7 +115,7 @@ $( document ).ready(function() {
         $(".order-total").html( totalCart() );
         $("#modal-order-total").html( 'KES ' + totalCart() );
         $("#modal-order").html( modalOutput );
-        $("#confirmation-buy-array").val( modalIdArrayOutput );
+        // $("#confirmation-buy-array").val( modalHiddenData );
       }
 
       var Item = function(name, price, dishId, count){
@@ -113,7 +126,7 @@ $( document ).ready(function() {
       }
 
       function listCart(){
-        console.log('this is a copy')
+        // console.log('this is a copy')
       	var cartCopy = [];
       	for (var i in cart){
         		var item = cart[i];
@@ -124,7 +137,7 @@ $( document ).ready(function() {
             itemCopy.total = (item.price * item.count).toFixed(2) //this adds an extra property ('price')to each object item.
             cartCopy.push(itemCopy);
       	}
-          console.log('this is a copy')
+          // console.log('this is a copy')
           console.log(cartCopy)
       	return cartCopy;
 
@@ -175,13 +188,32 @@ $( document ).ready(function() {
     	cart = JSON.parse(localStorage.getItem("shoppingCart"));
     }
 
+    function makeOrderArray(){
+      var arrayOfDish = [];
+      for(var i in cart) {
+        arrayOfDish.push(fillArray(cart[i].dishId, cart[i].count))
+      }
+        var orderedDishIds = arrayOfDish.join()
+        var dishIdOutput = orderedDishIds.split(",")
+        console.log(dishIdOutput)
+
+        $("#confirmation-buy-array").val(dishIdOutput)
+    }
+
+    function fillArray(value, len) {
+      var arr = [];
+      for (var i = 0; i < len; i++) {
+        arr.push(value);
+      }
+      return arr;
+    }
 
 
 
     loadCart();
 
     displayCart();
-    console.log(displayCart());
+
 
 
   //       //stores info from the orders in an object

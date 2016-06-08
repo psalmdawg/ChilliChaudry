@@ -50,7 +50,7 @@
             <!-- HOW TO MAKE THIS POST WORK... WHY SHOULD IT BE POST AND NOT GET??? -->
             <form id="confirmation-form" action="/confirmation" method="post">
               <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                <input type="hidden" id="confirmation-buy" name="ordered_dishes" value="">
+                <input type="hidden" id="confirmation-buy-array" name="ordered_dishes" value="">
                 <input type="text"  class = "modal-form-input" name="customer_name" placeholder="Name">
                 <input type="text"  class = "modal-form-input" name="customer_phone" placeholder="Contact Number">
                 <input type="email" class = "modal-form-input" name="customer_email" placeholder="Your Email">

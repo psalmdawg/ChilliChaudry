@@ -1,8 +1,65 @@
 
 <div id="show-the-order-array-id">
-  <%= @ordered_dishes %>
-  <%= @customer_name %>
-  <%= @customer_phone %>
-  <%= @customer_email %>
-  <%= @delivery_address%>
+
+  <h3>Order-Confirmation</h3>
+  Food ordered:
+  <div id="order-confirmation">
+
+  </div>
+  <div id="confirmation-total-cost">
+
+  </div>
+  <br>
+  Your Details:
+  <p>Name: <%= @customer_name %></p>
+  <p>Contact phone:  <%= @customer_phone %></p>
+  <p>Contact email: <%= @customer_email %></p>
+  <p>Delivery address: <%= @delivery_address%></p>
+  <p>Special Instructions: <%= @special_instructions %></p>
 </div>
+
+<a id="reset-home-btn" href="/">Home</a>
+
+
+<script>
+
+  $( document ).ready(function() {
+    var cart =[];
+    function loadCart (){
+     cart = JSON.parse(localStorage.getItem("shoppingCart"));
+    }
+    loadCart();
+    $("#confirmation-total-cost").html("Order total = KES " + totalCart() );
+
+    var cartArray = cart;
+    var confirmed = "";
+    for(var i in cartArray) {
+      confirmed += '<div>'
+      +  cartArray[i].name
+      + " x "
+      +  cartArray[i].count;
+      + cartArray[i].total
+
+    };
+
+    function totalCart() {
+      var totalCost = 0;
+      for(var i in cart){
+        totalCost += cart[i].price * cart[i].count;
+      }
+      return totalCost; //2 decimal places
+    }
+
+
+    $("#order-confirmation").html(confirmed);
+
+  });
+
+  $("#reset-home-btn").click(function(){
+
+    cart = []
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
+  })
+
+
+</script>
