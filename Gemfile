@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'httparty'
+# gem 'httparty'
 
 gem 'rack-cors', :require => 'rack/cors'
 
@@ -52,4 +52,8 @@ group :development do
   gem 'spring'
 end
 
+
 gem 'rails_12factor', group: :production
+
+gem 'omniauth', '0.2.0'
+gem 'httparty'

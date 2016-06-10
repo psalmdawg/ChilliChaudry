@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Admin.destroy_all
 Dish.destroy_all
+Order.destroy_all
 
 admin = Admin.new
 admin.name = "Paul"
