@@ -15,6 +15,7 @@
 //= require backbone
 //= require handlebars
 //= require jquery_ujs
+//= require smoothscroll
 
 //= require menu
 //= require modal

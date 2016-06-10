@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  font-family: Baskerville, “Baskerville Old Face”, “Hoefler Text”, Garamond, “Times New Roman”, serif;
+
 }
 
 *, *:before, *:after {

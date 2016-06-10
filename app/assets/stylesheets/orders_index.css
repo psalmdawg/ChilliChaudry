@@ -1,0 +1,35 @@
+#unprocessed-orders-list{
+  /*border: solid black 1px;*/
+  margin-bottom: 25px;
+  list-style: none;
+  padding: 6px;
+  line-height: 150%;
+}
+
+#unprocessed-orders-list ul{
+  list-style-type: none;
+  font-weight: normal;
+}
+
+#processed-orders-list ul{
+  list-style-type: none;
+  font-weight: normal;
+  margin-top:10px;
+}
+.form-div-one{
+  display: inline-block;
+}
+.form-div-two{
+  display: inline-block;
+}
+.form-div-both{
+  float: right;
+}
+
+li{
+  border: dotted white 0.5px;
+}
+
+.cust-ordr-detail{
+  font-weight: bold;
+}

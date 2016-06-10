@@ -113,7 +113,7 @@ $( document ).ready(function() {
 
         $("#order").html(output);
         $(".order-total").html( totalCart() );
-        $("#modal-order-total").html( 'KES ' + totalCart() );
+        $("#modal-order-total").html( 'Total: KES ' + totalCart() );
         $("#modal-order").html( modalOutput );
         // $("#confirmation-buy-array").val( modalHiddenData );
       }

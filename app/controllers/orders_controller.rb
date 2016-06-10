@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
     @delivery_address = params[:delivery_address]
     @special_instructions = params[:special_instructions]
 
+
     @dish = Dish.all
 
 
@@ -34,29 +35,50 @@ class OrdersController < ApplicationController
   def show_individual
 
     order = Order.find_by(id:params[:id])
-    if order == nil
-        @order_has_no_value = "This record has no food order, the customer didn't specify any food"
-    else
+    orderlength = order.dishes.length
+
+    # if orderlength == 0
+    #     @order_has_no_value = "This record has no food order, the customer didn't specify any food"
+    # else
         @contact = order.phone
         @delivery = order.delivery_address
         @name = order.customer_name
         @instructions = order.special_instructions
-      dishes = order.dishes #wil return a string of numbers
+        @email = order.email
+        processed = order.processed
 
-      dish_ids = dishes.split(',')
-      array_of_dish_names = []
-      array_of_dish_ids = []
+        if
+          processed == true
+          @processed = "This order has been processed"
+         else
+        end
 
-      dish_ids.each do |id|
-        one_dish = Dish.find(id.to_i)
-        array_of_dish_names << one_dish.name
-        array_of_dish_ids << one_dish.id
+        @timestamp = order.created_at.strftime("%I:%M %p %m/%d/%Y")
+        @timestamp_two = order.created_at.strftime("%m, %d, %Y %H:%M:%S")
+
+
+
+        dishes = order.dishes #wil return a string of numbers
+
+        dish_ids = dishes.split(',')
+        array_of_dish_names = []
+        array_of_dish_ids = []
+
+        dish_ids.each do |id|
+          one_dish = Dish.find(id.to_i)
+          array_of_dish_names << one_dish.name
+          array_of_dish_ids << one_dish.id
+        end
+
+
+      if orderlength == 0
+        @orderlength = orderlength
+        @order_has_no_value = "INVALID: This record has no food orders, the customer didn't specify any food!"
+      else
+
+      counts = Hash.new(0)
+      array_of_dish_names.each { |array_of_dish_names| counts[array_of_dish_names] += 1 }
+      @dishes = counts
     end
-    end
-
-    @dishes = array_of_dish_names
-    # redirect_to '/individual_dish'
-
-
   end
 end

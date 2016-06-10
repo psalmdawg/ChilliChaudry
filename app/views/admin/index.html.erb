@@ -1,55 +1,49 @@
 
 <h4>Unprocessed Orders<h4>
-  <br>
-  <br>
   There are <%= @count %> unprocessed orders!
-<ul id="unprocessed-orders-list">
-  <br>
-  <br>
-  <% @unprocessed_orders.each do |order| %>
-  <li id="<%=order.id%>">ID:<%=order.id%> | Name: <%=order.customer_name%> | Contact: <%=order.phone%>
-    <form action="/orders/<%=order.id%>" method='post'>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input type="hidden" name="change_to_true" value="true">
-      <button>remove</button>
-    </form>
-    <form action="/orders/view" method='get'>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input type="hidden" name="id" value="<%=order.id%>">
-      <button>view order</button>
-    </form>
-  </li>
-  <% end %>
-
-</ul>
-<br>
-
-<br>
-<h3>Processed orders from the last 24 hrs... (below)</h3>
-<br>
-
-<br>
+<div id="unprocessed-orders-list">
   <ul>
-    <% @processed.each do |order| %>
-      <li>
-        ID:<%=order.id%> | Name: <%=order.customer_name%> | Contact: <%=order.phone%>
-        <form action="/orders/view" method='get'>
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          <input type="hidden" name="id" value="<%=order.id%>">
-          <button>view order</button>
-        </form>
+    <% @unprocessed_orders.each do |order| %>
+      <li id="<%=order.id%>">
+           Name: <span class="cust-ordr-detail"><%=order.customer_name%></span>
+         | Contact:<span class="cust-ordr-detail"> <%=order.phone%> </span>
+         | Created:<span id="cust-ordr-time"> <%= order.created_at.strftime("%m, %d, %Y %H:%M:%S")%></span>
+         <span class="counter"></span>
+        <div class="form-div-both">
+          <div class="form-div-one">
+            <form action="/orders/<%=order.id%>" method='post'>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <input type="hidden" name="change_to_true" value="true">
+            <div class="remove-order-button"><button>remove</button></div>
+            </form>
+          </div>
+          <div class="form-div-two">
+            <form action="/orders/view" method='get'>
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <input type="hidden" name="id" value="<%=order.id%>">
+              <button>view order</button>
+            </form>
+          </div>
+        </div>
       </li>
     <% end %>
   </ul>
+</div>
 
-
-<script type="text/javascript">
-  $( document ).ready(function() {
-    $('#unprocessed-orders-list').on('click' , function() {
-      console.log( event.target.id )
-    })
-
-
-
-  });
-</script>
+<h3>Processed orders from the last 24 hrs... (below)</h3>
+<div id="processed-orders-list">
+    <ul>
+      <% @processed.each do |order| %>
+        <li>
+          Name: <%=order.customer_name%> | Contact: <%=order.phone%> |  Created: <%= order.created_at.strftime("%m/%d/%Y %I:%M%p") %>
+          <div class="form-div-both">
+            <form action="/orders/view" method='get'>
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <input type="hidden" name="id" value="<%=order.id%>">
+              <button>view order</button>
+            </form>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+</div>

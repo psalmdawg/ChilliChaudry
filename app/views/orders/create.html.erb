@@ -1,24 +1,22 @@
 
 <div id="show-the-order-array-id">
-
-  <h3>Order-Confirmation</h3>
-  Food ordered:
-  <div id="order-confirmation">
-
+  <div id="confirmation-left">
+    <h3 class="confirmation-title">Order-Confirmation</h3>
+    <div id="order-confirmation"></div>
+    <div id="confirmation-total-cost"></div>
+  <p id="check-email">  Please check your email for order confirmation and delivery estimate!</p>
   </div>
-  <div id="confirmation-total-cost">
-
+  <div id="confirmation-right">
+    <h3 class="confirmation-title">Your Details:</h3>
+      <p>Name: <%= @customer_name %></p>
+      <p>Contact phone:  <%= @customer_phone %></p>
+      <p>Contact email: <%= @customer_email %></p>
+      <p>Delivery address: <%= @delivery_address%></p>
+      <p>Special Instructions: <%= @special_instructions %></p>
   </div>
-  <br>
-  Your Details:
-  <p>Name: <%= @customer_name %></p>
-  <p>Contact phone:  <%= @customer_phone %></p>
-  <p>Contact email: <%= @customer_email %></p>
-  <p>Delivery address: <%= @delivery_address%></p>
-  <p>Special Instructions: <%= @special_instructions %></p>
 </div>
 
-<a id="reset-home-btn" href="/">Home</a>
+<!-- <a id="reset-home-btn" href="/">Home</a> -->
 
 
 <script>
@@ -39,7 +37,6 @@
       + " x "
       +  cartArray[i].count;
       + cartArray[i].total
-
     };
 
     function totalCart() {
@@ -49,17 +46,12 @@
       }
       return totalCost; //2 decimal places
     }
-
-
     $("#order-confirmation").html(confirmed);
-
   });
 
   $("#reset-home-btn").click(function(){
-
     cart = []
     localStorage.setItem("shoppingCart", JSON.stringify(cart));
   })
-
 
 </script>

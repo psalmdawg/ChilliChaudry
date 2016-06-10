@@ -24,10 +24,9 @@ default: &default
 development:
   <<: *default
   database: chillychaudry_development
-    adapter: postgresql
-    host: localhost
-    username: user
-    database: app-dev
+  adapter: postgresql
+  host: localhost
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

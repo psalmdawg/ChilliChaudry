@@ -1,6 +1,210 @@
-<h1>Our Menu</h1>
+<div id="dishtypes-menu-selector">
+
+  <h1>Our Menu</h1>
+
+  <ul>
+    <li><a href="#specials" class="smoothScroll">Lunch Time Specials!</a></li>
+    <li><a href="#bbq" class="smoothScroll">BBQ / Tandoori</a></li>
+    <li><a href="#meat" class="smoothScroll">Meat Curries</a></li>
+    <li><a href="#meat" class="smoothScroll">Fish Curries</a></li>
+    <li><a href="#meat" class="smoothScroll">Biriyani</a></li>
+    <li><a href="#vegetarian" class="smoothScroll">Vegetarian</a></li>
+    <li><a href="#nanRice" class="smoothScroll">Nans & Rice</a></li>
+    <li><a href="#salads" class="smoothScroll">Salads</a></li>
+    <li><a href="#sides" class="smoothScroll">Side Dishes</a></li>
+    <li><a href="#drinks" class="smoothScroll">Drinks</a></li>
+  </ul>
+
+</div>
+
 <div class="menu-container">
- <% @dishes.each do |dish| %>
+  <a name="specials"></a>
+  <p class="dish-type-title">Lunch Time Special Deals</p>
+ <% @lunch_special.each do |dish| %>
+   <div class="menu-item">
+
+     <div class="menu-item-name">
+        <%=dish.name%>
+     </div>
+     <div class="menu-item-description">
+        <%=dish.description%>
+     </div>
+     <div class="menu-item-price">
+        <span class="menu-item-price-span">Price </span><%=dish.price%>
+        <span id="KSH"> Ksh</span> <div id="underliner"></div>
+     </div>
+      <div class="add-to-button">
+        <input type="hidden" class="form-dish-name" value="<%= dish.name%>">
+        <input type="hidden" class="form-dish-id" value="<%= dish.id%>">
+        <input type="hidden" class="form-dish-price" value="<%= dish.price%>">
+        <button class='add-to-order-btn'>ADD TO ORDER</button>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="menu-container">
+  <a name="bbq"></a>
+  <p class="dish-type-title">BBQ / Tandoori</p>
+ <% @BBQ.each do |dish| %>
+   <div class="menu-item">
+
+     <div class="menu-item-name">
+        <%=dish.name%>
+     </div>
+     <div class="menu-item-description">
+        <%=dish.description%>
+     </div>
+     <div class="menu-item-price">
+        <span class="menu-item-price-span">Price </span><%=dish.price%>
+        <span id="KSH"> Ksh</span> <div id="underliner"></div>
+     </div>
+      <div class="add-to-button">
+        <input type="hidden" class="form-dish-name" value="<%= dish.name%>">
+        <input type="hidden" class="form-dish-id" value="<%= dish.id%>">
+        <input type="hidden" class="form-dish-price" value="<%= dish.price%>">
+        <button class='add-to-order-btn'>ADD TO ORDER</button>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="menu-container">
+  <a name="meat"></a>
+  <p class="dish-type-title">Meat & Fish Curries & Biriyani</p>
+ <% @meat_fish.each do |dish| %>
+   <div class="menu-item">
+
+     <div class="menu-item-name">
+        <%=dish.name%>
+     </div>
+     <div class="menu-item-description">
+        <%=dish.description%>
+     </div>
+     <div class="menu-item-price">
+        <span class="menu-item-price-span">Price </span><%=dish.price%>
+        <span id="KSH"> Ksh</span> <div id="underliner"></div>
+     </div>
+      <div class="add-to-button">
+        <input type="hidden" class="form-dish-name" value="<%= dish.name%>">
+        <input type="hidden" class="form-dish-id" value="<%= dish.id%>">
+        <input type="hidden" class="form-dish-price" value="<%= dish.price%>">
+        <button class='add-to-order-btn'>ADD TO ORDER</button>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="menu-container">
+  <a name="vegetarian"></a>
+  <p class="dish-type-title">Vegetarian</p>
+ <% @Vegetarian.each do |dish| %>
+   <div class="menu-item">
+
+     <div class="menu-item-name">
+        <%=dish.name%>
+     </div>
+     <div class="menu-item-description">
+        <%=dish.description%>
+     </div>
+     <div class="menu-item-price">
+        <span class="menu-item-price-span">Price </span><%=dish.price%>
+        <span id="KSH"> Ksh</span> <div id="underliner"></div>
+     </div>
+      <div class="add-to-button">
+        <input type="hidden" class="form-dish-name" value="<%= dish.name%>">
+        <input type="hidden" class="form-dish-id" value="<%= dish.id%>">
+        <input type="hidden" class="form-dish-price" value="<%= dish.price%>">
+        <button class='add-to-order-btn'>ADD TO ORDER</button>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="menu-container">
+  <a name="nanRice"></a>
+  <p class="dish-type-title">Nans & Rice</p>
+ <% @Nan.each do |dish| %>
+   <div class="menu-item">
+
+     <div class="menu-item-name">
+        <%=dish.name%>
+     </div>
+     <div class="menu-item-description">
+        <%=dish.description%>
+     </div>
+     <div class="menu-item-price">
+        <span class="menu-item-price-span">Price </span><%=dish.price%>
+        <span id="KSH"> Ksh</span> <div id="underliner"></div>
+     </div>
+      <div class="add-to-button">
+        <input type="hidden" class="form-dish-name" value="<%= dish.name%>">
+        <input type="hidden" class="form-dish-id" value="<%= dish.id%>">
+        <input type="hidden" class="form-dish-price" value="<%= dish.price%>">
+        <button class='add-to-order-btn'>ADD TO ORDER</button>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="menu-container">
+  <a name="salads"></a>
+  <p class="dish-type-title">Salads</p>
+ <% @salads.each do |dish| %>
+   <div class="menu-item">
+
+     <div class="menu-item-name">
+        <%=dish.name%>
+     </div>
+     <div class="menu-item-description">
+        <%=dish.description%>
+     </div>
+     <div class="menu-item-price">
+        <span class="menu-item-price-span">Price </span><%=dish.price%>
+        <span id="KSH"> Ksh</span> <div id="underliner"></div>
+     </div>
+      <div class="add-to-button">
+        <input type="hidden" class="form-dish-name" value="<%= dish.name%>">
+        <input type="hidden" class="form-dish-id" value="<%= dish.id%>">
+        <input type="hidden" class="form-dish-price" value="<%= dish.price%>">
+        <button class='add-to-order-btn'>ADD TO ORDER</button>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="menu-container">
+  <a name="sides"></a>
+  <p class="dish-type-title">Side Dishes</p>
+ <% @sides.each do |dish| %>
+   <div class="menu-item">
+
+     <div class="menu-item-name">
+        <%=dish.name%>
+     </div>
+     <div class="menu-item-description">
+        <%=dish.description%>
+     </div>
+     <div class="menu-item-price">
+        <span class="menu-item-price-span">Price </span><%=dish.price%>
+        <span id="KSH"> Ksh</span> <div id="underliner"></div>
+     </div>
+      <div class="add-to-button">
+        <input type="hidden" class="form-dish-name" value="<%= dish.name%>">
+        <input type="hidden" class="form-dish-id" value="<%= dish.id%>">
+        <input type="hidden" class="form-dish-price" value="<%= dish.price%>">
+        <button class='add-to-order-btn'>ADD TO ORDER</button>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+
+
+<div class="menu-container">
+  <a name="drinks"></a>
+  <p class="dish-type-title">Drinks</p>
+ <% @drinks.each do |dish| %>
    <div class="menu-item">
 
      <div class="menu-item-name">
@@ -47,6 +251,7 @@
             </div>
           </div>
           <div id="modal-right">
+            <h1 id="modal-warning">Please make sure that your contact details are correct, and we can contact you. Otherwise this may really spoil your dinner as we may have to cancel your order, if you can't be reached!</h1>
             <!-- HOW TO MAKE THIS POST WORK... WHY SHOULD IT BE POST AND NOT GET??? -->
             <form id="confirmation-form" action="/confirmation" method="post">
               <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -66,3 +271,19 @@
       </div><!--//end of modal -->
     </div>
 </div>
+
+<script>
+
+$( ".menu-item" ).hover(
+  function() {
+    // $( this ).append( $( "<span> ***</span>" ) );
+    $( this ).closest(".menu-item").css("background-color","white");
+    $( this ).closest(".menu-item").css('box-shadow', '2.5px 2.5px 1.25px #888');
+
+  }, function() {
+      $( this ).closest(".menu-item").css("background-color","inherit");
+      $( this ).closest(".menu-item").css('box-shadow', '0px 0px 0px #888')
+  }
+);
+
+</script>

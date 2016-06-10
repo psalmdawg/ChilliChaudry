@@ -6,10 +6,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
   <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
 </head>
-
 
 
 
@@ -17,19 +15,25 @@
   <div class="navContainer">
     <nav>
       <ul id="main-nav-list">
-        <a href="/"><li>About Us</li></a>
+
+        <a href="/"><li>Home</li></a>
         <a href="/dish"><li>Order Food</li></a>
         <% if session[:current_user_id] %>
           <a href='/logout'><li>Log-Out</li></a>
           <a href="/admin"><li>Orders</li></a>
+          <%=@work%>
         <% else %>
           <a href="/login"><li>Log-In</li></a>
         <% end %>
-      </ul>
+
       <% if session[:current_user_id] %>
-      <span id="logged-in-status">You Are logged in!</span>
+      <span id="logged-in-status">Logged In As Admin!</span>
+      <!-- <span id="home-page-orders"> <%= @unprocessed_orders %></span> -->
       <% end %>
+      <img id="nav-img" src="assets/chilly-chaudry-blue.png" alt="main-image" />
+      </ul>
     </nav>
+
   </div>
 
   <div id="mainContainer">

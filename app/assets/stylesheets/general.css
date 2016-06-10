@@ -1,12 +1,7 @@
 
 body{
   background-color:#eeedec;
+  background-image: url('assets/crumpled.jpg');
   /*width:960;
   margin:auto;*/
-}
-
-#show-the-order-array-id{
-  margin-top:400px;
-  min-height:100px;
-  border: solid black 1px;
 }

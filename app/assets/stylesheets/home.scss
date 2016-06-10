@@ -13,13 +13,9 @@
   // margin-top:100px;
 }
 
-#logged-in-status{
-  float: right;
-  color: white;
-}
 
 #main-nav-list{
- width:65%;
+ // width:65%;
 }
 
 nav li:hover {
@@ -47,6 +43,22 @@ nav ul{
 
 }
 
+#home-page-orders{
+  font-weight: bold;
+  color: red;
+}
+
+#logged-in-status{
+  // float: right;
+  margin-left:25px;
+  color: white;
+}
+#nav-img{
+  height:50px;
+  display: inline-block;
+  float: right;
+}
+
 nav{
   // height:4em;
   // background:#ded29e;
@@ -57,7 +69,7 @@ nav{
 
 .navContainer {
   height:4em;
-  background:#26587f;
+  background:#081f65;
   position: fixed;
   width: 100%;
 }

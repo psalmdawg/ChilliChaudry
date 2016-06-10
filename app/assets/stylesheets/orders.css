@@ -1,0 +1,66 @@
+#admin-order-ctnr{
+  border:white 1px solid;
+  min-height: 20px;
+  background: linen;
+  font-size: 25px;
+
+}
+/*
+#cust-name{
+  border:white 1px solid;
+  min-height: 20px;
+}
+
+#cust-tel{
+  border:white 1px solid
+
+}
+
+#cust-address{
+  border:white 1px solid;
+}
+
+#cust-order{
+  border:white 1px solid;
+}*/
+#counter{
+  color: red;
+}
+#customer-details-container{
+  border: black solid 1px;
+}
+#cust-instructions{
+  border:white 1px solid;
+}
+.make-look-nice{
+  background-color: white;
+  min-width: 100%;
+}
+#admin-order-ctnr,
+#cust-instructions,
+#cust-order,
+#cust-address,
+#cust-tel,
+#cust-name,
+#admin-order-ctnr{
+  /*border:black 1px solid;*/
+  min-height: 45px;
+  padding: 5px;
+  font
+}
+.sngl-ordr-tmstmp{
+  float: right;
+}
+#no-order-wrng{
+  font-weight: bolder;
+  color: red;
+}
+
+#inner-cust-order{
+  background-color: white;
+  line-height: 120%;
+  padding: 5px;
+}
+.make-bold{
+  font-weight: bolder;
+}

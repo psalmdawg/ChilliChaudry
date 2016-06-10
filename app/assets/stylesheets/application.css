@@ -15,5 +15,8 @@
  *= require general
  *= require modal
  *= require home
+ *= require orders
+ *= require confirmation
+ *= require orders_index
  *= require_self
  */
