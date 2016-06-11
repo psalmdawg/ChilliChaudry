@@ -260,7 +260,7 @@
                 <input type="text"  class = "modal-form-input" name="customer_phone" placeholder="Contact Number">
                 <input type="email" class = "modal-form-input" name="customer_email" placeholder="Your Email">
                 <input type="text"  class = "modal-form-input" name="delivery_address" placeholder="Delivery Address">
-                <input type="text"  class = "modal-form-input" name="special_instructions" placeholder="Please enter any special delivery/dietry requirements">
+                <input type="text"  id="exempt" class = "modal-form-input" name="special_instructions" placeholder="Please enter any special delivery/dietry requirements">
                 <div id="modal-payment-btn-ctnr">
                   <button>Proceed to Payment</button>
                   <span class="close">CANCEL</span>
@@ -285,5 +285,10 @@ $( ".menu-item" ).hover(
       $( this ).closest(".menu-item").css('box-shadow', '0px 0px 0px #888')
   }
 );
+
+$(function(){
+       $("input").prop('required',true);
+       $("#exempt").prop('required',false);
+})
 
 </script>

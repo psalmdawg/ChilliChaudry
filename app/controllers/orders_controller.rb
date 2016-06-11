@@ -45,6 +45,7 @@ class OrdersController < ApplicationController
         @name = order.customer_name
         @instructions = order.special_instructions
         @email = order.email
+        @orderID = order.id
         processed = order.processed
 
         if
