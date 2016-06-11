@@ -16,7 +16,6 @@ $( document ).ready(function() {
         makeOrderArray()
       });
 
-
       $("#order").on("click", ".delete-item", function(event){
        var name = $(this).attr("name");
        removeItemFromCartAll(name);
@@ -29,27 +28,21 @@ $( document ).ready(function() {
        displayCart();
      })
 
-
      $("#myBtn").click(function(){
        makeOrderArray()
      });
 
-
      $("#order").on("click", ".plus-item", function(event){
        var name = $(this).attr("name");
        var dishId = $(this).closest('li').find(".hidden-dish-id").val();
-
-
        addItemToCart(name, dishId, 0, 1);
        displayCart();
-
      })
 
       var cart = [];
 
       function addItemToCart(name, price, dishId, count){
         for(var i in cart){
-
           if (cart[i].name === name){
               cart[i].count += count;
               saveCart();
@@ -63,11 +56,9 @@ $( document ).ready(function() {
 
       function displayCart(){
 
-
         var cartArray = listCart();
         var output = "";
         var modalOutput = "";
-
 
         for(var i in cartArray) {
           output += '<li>'
@@ -193,7 +184,10 @@ $( document ).ready(function() {
       return arr;
     }
 
+    function makeCart(){
+      cart = []
+    }
+    makeCart()
     loadCart();
-
     displayCart();
 });
