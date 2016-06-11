@@ -60,11 +60,3 @@ gem 'rails_12factor', group: :production
 
 gem 'omniauth', '0.2.0'
 gem 'httparty'
-
-group :test, :production do
-  gem 'pg'
-end
-
-group :development do
-  gem 'sqlite3'
-end
