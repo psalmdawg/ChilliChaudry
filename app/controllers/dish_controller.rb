@@ -1,5 +1,4 @@
 
-require 'JSON'
 class DishController < ApplicationController
 
   def index
