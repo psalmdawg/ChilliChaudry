@@ -4,5 +4,6 @@ class UserEmail < ApplicationMailer
 
   def create_order
     @user
+  end
 
 end
