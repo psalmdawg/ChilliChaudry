@@ -42,11 +42,19 @@ $( document ).ready(function() {
       var cart = [];
 
       function addItemToCart(name, price, dishId, count){
-        for(var i in cart){
-          if (cart[i].name === name){
-              cart[i].count += count;
-              saveCart();
-              return;
+
+        if (cart == []){
+          var item = new Item(name, price, dishId, count);
+           cart.push(item);
+           saveCart();
+           return;
+         } else {
+          for(var i in cart){
+            if (cart[i].name === name){
+                cart[i].count += count;
+                saveCart();
+                return;
+            }
           }
         }
         var item = new Item(name, price, dishId, count);
@@ -74,7 +82,7 @@ $( document ).ready(function() {
           + " <button class='subtract-item' name='"
           + cartArray[i].name +"'>-</button>"
           + " <button class='delete-item' name='"
-          + cartArray[i].name+"'>X</button>"
+          + cartArray[i].name+"'>Del</button>"
           + "</li>";
 
           modalOutput +=
