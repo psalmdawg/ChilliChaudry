@@ -19,7 +19,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 require 'json'
 
-gem "multi_json"
+
 
 gem 'stripe'
 # Use jquery as the JavaScript library
