@@ -42,7 +42,7 @@ $( document ).ready(function() {
       var cart = [];
 
       function addItemToCart(name, price, dishId, count){
-        var twat = 'you'
+      
 
         if (cart == []){
           var item = new Item(name, price, dishId, count);
