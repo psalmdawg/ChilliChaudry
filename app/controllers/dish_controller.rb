@@ -1,4 +1,4 @@
-require 'HTTParty'
+
 require 'JSON'
 class DishController < ApplicationController
 
