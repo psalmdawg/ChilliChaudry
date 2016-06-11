@@ -4,7 +4,7 @@
   min-height: 600px;
   /*border: solid black 1px;*/
   line-height:200%;
-  background-image: url('http://blog.inkjetwholesale.com.au/wp-content/uploads/2015/10/Folded-printer-paper.jpg');
+  background-image: image-url('http://blog.inkjetwholesale.com.au/wp-content/uploads/2015/10/Folded-printer-paper.jpg');
   padding: 40px;
   font-size: 17px;
 }
