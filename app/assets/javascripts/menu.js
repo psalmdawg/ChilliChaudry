@@ -42,14 +42,7 @@ $( document ).ready(function() {
       var cart = [];
 
       function addItemToCart(name, price, dishId, count){
-      
 
-        if (cart == []){
-          var item = new Item(name, price, dishId, count);
-           cart.push(item);
-           saveCart();
-           return;
-         } else {
           for(var i in cart){
             if (cart[i].name === name){
                 cart[i].count += count;
@@ -57,10 +50,17 @@ $( document ).ready(function() {
                 return;
             }
           }
-        }
-        var item = new Item(name, price, dishId, count);
+
+       var item = new Item(name, price, dishId, count);
+       if(cart == null){
+         cart = []
          cart.push(item);
          saveCart();
+         return;
+       }
+       cart.push(item);
+       saveCart();
+
       }
 
       function displayCart(){
@@ -92,7 +92,6 @@ $( document ).ready(function() {
           + " x "
           + cartArray[i].name
           + '</li>';
-
 
         }
 

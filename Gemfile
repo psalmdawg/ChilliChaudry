@@ -20,7 +20,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 require 'json'
 
-gem 'puma'
+# gem 'puma'
 
 
 gem 'stripe'
