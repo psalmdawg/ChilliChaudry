@@ -27,6 +27,7 @@ module Chillychaudry
       end
     end
 
+  
     config.serve_static_assets = true
 
 
