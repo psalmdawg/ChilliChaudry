@@ -16,7 +16,7 @@
     <nav>
       <ul id="main-nav-list">
 
-        
+
         <a href="/dish"><li>Order Food</li></a>
         <% if session[:current_user_id] %>
           <a href='/logout'><li>Log-Out</li></a>
@@ -30,7 +30,7 @@
       <span id="logged-in-status">Logged In As Admin!</span>
       <!-- <span id="home-page-orders"> <%= @unprocessed_orders %></span> -->
       <% end %>
-      <img id="nav-img" src="assets/chilly-chaudry-blue.png" alt="main-image" />
+      <a href="/dish"><img id="nav-img" src="assets/chilly-chaudry-blue.png" alt="main-image" /></a>
       </ul>
     </nav>
 
