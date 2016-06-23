@@ -36,11 +36,9 @@ h4 {
   font-size: inherit;
 }
 
-a,
-button {
+a,button {
   /*color: inherit; /* dose not inherit be default */*/
-  transition: .3s;
-}
+  transition: .3s ;}
 
 a {
   text-decoration: none;
