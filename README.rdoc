@@ -1,28 +1,10 @@
-== README
+ChillyChaudry is an Indian kitchen in Nairobi, this is their prototype website. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The site allows the user to browse the menu and place and order. ( payment system is yet to be organised) 
 
-Things you may want to cover:
+The orders are stored in a database, and can be viewed by logging in (click on the chilly chaudry logo). The orders can be viewed by kitchen staff and show a count down timer of when they were placed. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The main business logic is in JavaScript, a bespoke shopping cart. 
+The back end is Ruby.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
