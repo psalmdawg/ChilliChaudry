@@ -1,0 +1,11 @@
+.nav-up{
+  opacity: .02;
+  transition: 1.5s;
+}
+.nav-down{
+  transition: 3.5s;
+}
+
+/*.navContainer{
+  opacity: .3;
+}*/

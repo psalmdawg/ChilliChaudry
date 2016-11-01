@@ -1,0 +1,121 @@
+@media (max-width: 850px){
+
+  #mainContainer{
+    margin-top: 0px;
+    padding-top: 5px;
+  }
+
+  * {
+    /*color:red;*/
+  }
+
+  .menu-item-description{
+    /*color:red;*/
+  }
+  .navContainer {
+    /*background: red;*/
+    display: none;
+    height: 0px;
+  }
+  .menu-container{
+    margin-top: 0.5em;
+    margin-left: auto;
+    width: 100%;
+  }
+  #dishtypes-menu-selector{
+    display: none;
+  }
+  #order-list-container{
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    padding: 3px;
+    /*height: 50px;*/
+    height: 55px;
+    transition: .5s;
+    margin-left: 0;
+  }
+  #order-list-container img{
+    min-width: 25px;
+    padding-top:3px;
+
+  }
+  #order-list-title{
+    color: white;
+    padding-left: 8px;
+    margin-bottom: 10px;
+  }
+  #order-list{
+    padding: 15px;
+    font-size: 1.2em;
+  }
+  .order-total{
+    display: none;
+  }
+  .menu-container button{
+    border: solid lightgrey 1px;
+    border-radius:3px;
+    width: 100%;
+    /*text-align: center;*/
+    margin: 0 auto;
+    display: block;
+  }
+  #order-count, #burger-menu{
+    float: right;
+    color: red;
+    font-weight: bolder;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .add-to-order-button{
+    border: 1px solid black;
+  }
+  #myBtn, #cancel-order{
+    border: solid lightgrey 1px;
+    border-radius: 5px;
+    background: white;
+    width: 45%;
+  }
+  #cancel-order{
+    margin-top: 8px;
+    float: right;
+    display:inline-block;
+    margin-right: 10px;
+  }
+  #myBtn {
+    clear: right;
+    display:inline-block;
+    margin-left:10px;
+  }
+  .ordered-list-btn-container button{
+    background-color: linen;
+    /*border: lightgrey solid 1px;*/
+    border-radius: 6px;
+    /*font-size: 14px;*/
+    width: 30%;
+  }
+  .plus-item{
+    /*font-size: 20px;*/
+    border: solid 1px green;
+  }
+  .subtract-item{
+    border: solid 1px red;
+    /*padding: 0;*/
+  }
+  .delete-item{
+    /*font-size: 14px;
+    height: 25px;
+    margin-top: -3px;*/
+    /*margin-bottom:10px;*/
+    border: grey solid 1px;
+
+  }
+
+}
+
+
+/*need to split menu-container and order-list-container*/
+/*
+when full screen, split left and right.
+when mobile, move the orders to the top and keep the order total at the bottom of the screen on a nav bar.*/

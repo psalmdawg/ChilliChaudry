@@ -2,28 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-#mainContainer{
-  // margin: 4em auto;
-  padding-top: 5em;
-  margin: 0 auto;
-  // border: 1px black solid;
-  width:960px;
-  background-color: #eeedec;
-  // margin-top:100px;
+body{
+  background-color:#eeedec;
 }
 
-
-#main-nav-list{
- // width:65%;
+#mainContainer{
+  padding-top: 64px;
+  // margin: 0 auto;
+  // width:960px;
+  // background-color: #eeedec;
 }
 
 nav li:hover {
   color: black;
-  //   -webkit-box-shadow: 0 8px 7px #777;
-  // -moz-box-shadow: 0 8px 7px #777;
-  // box-shadow: 0 8px 7px #777;
   border:black -2px solid;
+}
+
+.main-wlcm-img{
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
 }
 
 nav li{
@@ -39,17 +37,12 @@ nav li{
   border-radius: 2px;
 }
 
-nav ul{
-
-}
-
 #home-page-orders{
   font-weight: bold;
   color: red;
 }
 
 #logged-in-status{
-  // float: right;
   margin-left:25px;
   color: white;
 }
@@ -59,14 +52,10 @@ nav ul{
   float: right;
 }
 
-nav{
-  // height:4em;
-  // background:#ded29e;
-  // position: fixed;
-  // width: 100%;
-  // padding-top: 30px;
+#home-img-container{
+  height: 100vh;
+  background-color: #081f65;
 }
-
 .navContainer {
   height:4em;
   background:#081f65;

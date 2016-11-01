@@ -1,0 +1,19 @@
+.column_left{
+  float: left;
+  width: 50%
+}
+
+.column_right{
+  width: 50%;
+  display: inline-block;
+  float: right;
+}
+
+@media (max-width: 850px){
+  .column_left, .column_right{
+    float: none;
+    width: auto;
+    display: inherit;
+    margin-bottom: 100px;
+  }
+}

@@ -11,6 +11,7 @@ post '/api/order' => 'api/order#create'
 post '/confirmation' => 'orders#create'
 post '/orders/:id' => 'orders#update'
 get  '/orders/view' => 'orders#show_individual'
+get '/todo' => 'home#todo'
 
 resources:dish
 resources:charges

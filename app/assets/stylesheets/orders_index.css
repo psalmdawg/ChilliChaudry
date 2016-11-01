@@ -16,12 +16,15 @@
   font-weight: normal;
   margin-top:10px;
 }
+
 .form-div-one{
   display: inline-block;
 }
+
 .form-div-two{
   display: inline-block;
 }
+
 .form-div-both{
   float: right;
 }

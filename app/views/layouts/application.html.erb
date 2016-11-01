@@ -6,47 +6,32 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
 </head>
-
-
 
 <body>
   <div class="navContainer">
     <nav>
       <ul id="main-nav-list">
-
-
-        <a href="/dish"><li>Order Food</li></a>
+        <a href="/todo">TODO</a>
         <% if session[:current_user_id] %>
           <a href='/logout'><li>Log-Out</li></a>
           <a href="/admin"><li>Orders</li></a>
           <%=@work%>
-        <% else %>
-          <a href="/login"><li>Log-In</li></a>
         <% end %>
 
       <% if session[:current_user_id] %>
       <span id="logged-in-status">Logged In As Admin!</span>
-      <!-- <span id="home-page-orders"> <%= @unprocessed_orders %></span> -->
       <% end %>
-      <a href="/dish"><img id="nav-img" src="assets/chilly-chaudry-blue.png" alt="main-image" /></a>
+      <a href="/login"><img id="nav-img" src="assets/chilly-chaudry-blue.png" alt="main-image" /></a>
       </ul>
     </nav>
-
   </div>
 
   <div id="mainContainer">
-
-
-
-
-         <%= yield %>
-
-
-
-
-
+    <%= yield %>
   </div>
+
 </body>
 </html>

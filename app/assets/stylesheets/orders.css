@@ -3,26 +3,8 @@
   min-height: 20px;
   background: linen;
   font-size: 25px;
-
-}
-/*
-#cust-name{
-  border:white 1px solid;
-  min-height: 20px;
 }
 
-#cust-tel{
-  border:white 1px solid
-
-}
-
-#cust-address{
-  border:white 1px solid;
-}
-
-#cust-order{
-  border:white 1px solid;
-}*/
 #counter{
   color: red;
 }

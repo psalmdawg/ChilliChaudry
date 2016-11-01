@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require reset
+
  *= require menu-page
  *= require general
  *= require modal
@@ -19,4 +19,8 @@
  *= require confirmation
  *= require orders_index
  *= require_self
+ *= require responsive
+ *= require columns
+ *= require scroll
+ *= require reset
  */

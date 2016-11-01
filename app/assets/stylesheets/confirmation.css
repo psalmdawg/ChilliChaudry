@@ -1,8 +1,8 @@
 #show-the-order-array-id{
-  /*margin-top:400px;*/
-  /*min-height:100px;*/
+  margin-top:400px;
+  min-height:100px;
   min-height: 600px;
-  /*border: solid black 1px;*/
+  border: solid black 1px;
   line-height:200%;
   background-image: image-url('http://blog.inkjetwholesale.com.au/wp-content/uploads/2015/10/Folded-printer-paper.jpg');
   padding: 40px;
@@ -11,12 +11,11 @@
 
 .confirmation-title{
   font-weight: bolder;
-
 }
 
 #confirmation-right{
   width:45%;
-  /*display:inline;*/
+  display:inline;
   display:inline-block;
   padding-left: 15px;
 
